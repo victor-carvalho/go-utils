@@ -29,7 +29,7 @@ mainLoop:
 					}
 					queue.PushBack(item)
 				case out <- value:
-					queue.DropFront()
+					queue.RemoveFront()
 					continue mainLoop
 				}
 			}
