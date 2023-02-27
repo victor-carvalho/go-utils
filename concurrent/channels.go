@@ -5,7 +5,7 @@ import (
 )
 
 func unboundedPipe[T any](in <-chan T, out chan<- T) {
-	queue := collections.NewGrowableRingBuffer[T](32)
+	queue := collections.NewRingBuffer[T](32)
 	closed := false
 
 mainLoop:

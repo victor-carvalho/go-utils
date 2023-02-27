@@ -7,7 +7,7 @@ import (
 )
 
 func TestFifoFixed(t *testing.T) {
-	rb := NewGrowableRingBuffer[int](4)
+	rb := NewRingBuffer[int](4)
 	require.Equal(t, rb.Cap(), 4)
 
 	values := []int{1, 2, 3, 4}
@@ -33,7 +33,7 @@ func TestFifoFixed(t *testing.T) {
 }
 
 func TestFifoGrow(t *testing.T) {
-	rb := NewGrowableRingBuffer[int](4)
+	rb := NewRingBuffer[int](4)
 	require.Equal(t, rb.Cap(), 4)
 
 	values := []int{1, 2, 3, 4, 5}
